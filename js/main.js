@@ -231,15 +231,13 @@ document.querySelectorAll('.tablinks').forEach((el) => {
 
 new Swiper('.banner-slider', {
   direction: "vertical",
-  // pagination: {
-  //   el: ".swiper-pagination",
-  //   clickable: true,
-  // },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
     renderBullet: function (index, className) {
-      return '<div class="' + className + '"><span>' + (index + 1) + "</span></div>";
+      index = index + 1;
+      index = index < 10 ? '0' + index : index; 
+      return '<div class="' + className + '"><span>' + (index) + '</span><span class="pagination-sq"><span></span></span></div>'
     },
   },
 });

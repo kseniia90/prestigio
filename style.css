@@ -68,54 +68,48 @@ h1 {
 }
 
 h1 {
-  font-size: 60px;
-  line-height: 71px;
-  margin-bottom: 40px;
-}
-
-h2 {
-  font-size: 50px;
-  line-height: 59px;
-}
-
-h3 {
   font-size: 40px;
   line-height: 47px;
 }
 
+h2 {
+  font-size: 35px;
+  line-height: 41px;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
 h4 {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 25px;
+  line-height: 30px;
 }
 
-/* h5 {
-  font-size: 18px;
-}
-
-h6 {
-  font-size: 16px;
-} */
 
 @media (min-width: 768px) {
   h1 {
+    font-size: 60px;
+    line-height: 71px;
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 50px;
+    line-height: 59px;
+    margin-bottom: 22px;
+  }
+  
+  h3 {
     font-size: 40px;
     line-height: 47px;
   }
-
-  h2 {
-    font-size: 35px;
-    line-height: 41px;
-  }
-
-  h3 {
-    font-size: 25px;
-    line-height: 30px;
-  }
-
+  
   h4 {
-    font-size: 16px;
-    line-height: 19px;
-  }
+    font-size: 30px;
+    line-height: 35px;
+  }  
 }
 
 p {
@@ -307,6 +301,10 @@ input[type="number"] {
 .error-center {
   display: flex;
   align-items: center;
+}
+
+.mb {
+  margin-bottom: 95px;
 }
 
 /* ---- header ---- */
@@ -598,8 +596,13 @@ input[type="number"] {
   align-items: center;
 }
 
+.banner-slider .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
+  right: 50px;
+}
+
 .banner-slider .swiper-pagination-bullet {
-  display: flex;
+  display: flex !important;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   color: #fff;
@@ -607,45 +610,60 @@ input[type="number"] {
   font-size: 22px;
   font-weight: 300;
   line-height: 33px;
-  width: 100px;
+  width: 100%;
+  min-width: 75px;
   height: 35px;
   border-radius: 0;
+  background-color: transparent;
+}
 
-  margin-top: 15px;
-  border: 1px solid red;
+.banner-slider .swiper-pagination-bullet> span {
+  display: none;
+}
+
+.banner-slider .swiper-pagination-bullet-active> span {
+  display: inline-block;
 }
 
 .banner-slider .swiper-pagination-bullet .pagination-sq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: 35px;
+  border: 1px solid transparent;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.banner-slider .swiper-pagination-bullet-active .pagination-sq {
+  border: 1px solid #fff;
+}
+
+.banner-slider .swiper-pagination-bullet-active .pagination-sq::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: -32px;
+
+}
+
+.banner-slider .swiper-pagination-bullet .pagination-sq span {
   display: block;
   width: 8px;
   height: 8px;
-  border: 1px solid #fff;
-  border-spacing: 6px;
   opacity: 0.5;
   background: #fff;
 }
 
-
-
-
-
-/* .banner-slider .swiper-pagination-bullet span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  text-align: center;
-  font-size: 22px;
-  line-height: 33px;
-  color: transparent;
-  opacity: 0.5;
-  background: #fff;
-  border: 1px solid red;
+.banner-slider .swiper-pagination-bullet-active .pagination-sq span {
+  opacity: 1;
 }
-
-.banner-slider .swiper-pagination-bullet-active span{
-  color: #fff;
-  background: #007aff;
-} */
 
 .banner-content {
   max-width: 750px;
@@ -681,6 +699,61 @@ input[type="number"] {
 .banner-slider .btn.play-icon {
   padding: 8px 15px 12px 18px;
 }
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.category {
+  padding: 28px 30px 35px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px 0px #4358CF1A;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+.category-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  height: 65px;
+}
+
+.category-title h4 {
+  margin-bottom: 0;
+}
+
+.category-title .btn {
+  flex: 1 0 auto;  
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-family: 'EurofontExtendedC';
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 45px;
+  border-radius: 50%;
+}
+
+.category-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 370/250;
+  max-height: 255px;
+}
+
+
 
 
 
