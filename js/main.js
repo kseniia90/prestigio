@@ -227,9 +227,9 @@ new Swiper('.banner-slider', {
 new Swiper('.bestsellers-slider', {
   slidesPerView: 2,
   spaceBetween: 10,
-  pagination: {
-    el: ".bestsellers-slider .swiper-pagination",
-    clickable: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
   breakpoints: {
     640: {
@@ -237,7 +237,7 @@ new Swiper('.bestsellers-slider', {
     },
     768: {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 20,
     }
   }
 });

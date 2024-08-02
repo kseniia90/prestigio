@@ -27,7 +27,7 @@
   --dropdown-icon: url('data:image/svg+xml,<svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6709 4.5L0.670898 0.5H8.6709L4.6709 4.5Z" fill="%23121212"/></svg>');
   --menu-icon: url('data:image/svg+xml,<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="24" height="2" rx="1" fill="%23121212"/><rect x="6" y="7.5" width="18" height="2" rx="1" fill="%23121212"/><rect x="12" y="14.5" width="12" height="2" rx="1" fill="%23121212"/></svg>');
   --menu-close-icon: url('data:image/svg+xml,<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 14.5L8 7.5M15 0.5L8 7.5M8 7.5L1 0.5M8 7.5L15 14.5" stroke="white"/></svg>');
-  --slider-next-icon: url('data:image/svg+xml,<svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 9L0 17.6603L0 0.339746L15 9Z" fill="white"/></svg>');
+  --slider-next-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAzMSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMwLjcwNzEgOC43MDcxMUMzMS4wOTc2IDguMzE2NTggMzEuMDk3NiA3LjY4MzQyIDMwLjcwNzEgNy4yOTI4OUwyNC4zNDMxIDAuOTI4OTMyQzIzLjk1MjYgMC41Mzg0MDggMjMuMzE5NSAwLjUzODQwOCAyMi45Mjg5IDAuOTI4OTMyQzIyLjUzODQgMS4zMTk0NiAyMi41Mzg0IDEuOTUyNjIgMjIuOTI4OSAyLjM0MzE1TDI4LjU4NTggOEwyMi45Mjg5IDEzLjY1NjlDMjIuNTM4NCAxNC4wNDc0IDIyLjUzODQgMTQuNjgwNSAyMi45Mjg5IDE1LjA3MTFDMjMuMzE5NSAxNS40NjE2IDIzLjk1MjYgMTUuNDYxNiAyNC4zNDMxIDE1LjA3MTFMMzAuNzA3MSA4LjcwNzExWk0wIDlIMzBWN0gwVjlaIiBmaWxsPSIjRDNENEQ4Ii8+Cjwvc3ZnPgoK');
 }
 
 *,
@@ -264,7 +264,9 @@ input[type="number"] {
 
 .btn {
   background-color: var(--accent);
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 400;
   color: #fff;
   cursor: pointer;
@@ -299,7 +301,7 @@ input[type="number"] {
 }
 
 .bg {
-  background: linear-gradient(180deg, #4358CF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(67, 88, 207, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 @media screen and (max-width: 767px) {
@@ -613,7 +615,6 @@ input[type="number"] {
   position: absolute;
   top: 50%;
   left: -32px;
-
 }
 
 .banner-slider .swiper-pagination-bullet .pagination-sq span {
@@ -676,7 +677,6 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
 }
 
 .category-title {
@@ -696,9 +696,6 @@ input[type="number"] {
   width: 45px;
   max-width: 45px;
   height: 45px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   padding: 5px;
   font-family: 'EurofontExtendedC';
   font-size: 30px;
@@ -723,10 +720,65 @@ input[type="number"] {
 }
 
 .block-full {
-  border: 1px solid red;
+  padding-top: 95px;
 }
 
-.bestsellers-slider .item {
+.bestsellers h2 {
+  margin-bottom: -50px;
+  padding-right: 160px;
+}
+
+.bestsellers-slider {
+  width: 100%;
+  padding: 75px 5px 20px;
+  margin: -20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-navigation {
+  align-self: flex-end;
+  position: absolute;
+  top: 0;
+  display: flex;
+  border: 1px solid #DBDBDB33;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.swiper-button-next {
+  border-left: 1px solid #D3D4D8;
+  border-radius: 0 10px 10px 0;
+}
+
+.swiper-button-prev {
+  border-radius: 10px 0 0 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 0;
+  width: 72px;
+  height: 20px;
+  margin-top: 0px;
+  position: static;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: '';
+  background: var(--slider-next-icon) no-repeat right center;
+  display: block;
+  width: 30px;
+  height: 18px;
+}
+
+.swiper-button-prev::after {
+  transform: rotate(180deg);
+}
+
+.product-catd {
   height: auto;
   display: flex;
   flex-direction: column;
@@ -735,33 +787,48 @@ input[type="number"] {
   box-shadow: 0px 4px 10px 0px #4358CF1A;
   border-radius: 10px;
   background: #FFFFFF;
-  padding: 13px 17px 20px;
+  padding: 13px 15px 20px;
+  position: relative;
 }
 
-.bestsellers-slider .item-img {
+.product-catd .item-img {
+  flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   aspect-ratio: 300/220;
+  height: 100%;
   max-height: 225px;
+  padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.product-catd .item-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
-.bestsellers-slider .item-content {
+.product-catd .item-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 6px;
   color:var(--light);
-
 }
 
-.bestsellers-slider h5 {
+.item-content-top {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-catd h5 {
   color: var(--accent);
 }
 
-.bestsellers-slider .item-price {
+.product-catd .item-price {
   color: var(--dark);
   font-family: 'EurofontExtendedC';
   font-size: 18px;
@@ -773,13 +840,82 @@ input[type="number"] {
   gap: 10px;
 }
 
-.bestsellers-slider .item-price .old-price {
+.product-catd .item-price .old-price {
   color:var(--light);
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
   text-decoration: line-through;
 }
+
+.product-catd-button-block {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  /* background: rgba(67, 88, 207, 0.03); */
+  /* box-shadow: 0px 4px 10px 0px #4358CF1A; */
+}
+
+.product-catd .btn {
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+}
+
+.product-catd-button {
+  position: relative;
+  padding: 8px 0 0 8px;
+  border-radius: 10px 0 50% 0;
+}
+
+.product-catd-button:after,
+.product-catd-button:before {
+    content:'';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom:-1px;
+    border-top: 0;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 0px rgba(67, 88, 207, 0.05);
+}
+
+.product-catd-button:after {
+    border-left: 0;
+    border-radius: 0 0 10px 0;
+    left: -20px;
+}
+.product-catd-button:before {
+    border-right: 0;
+    border-radius: 0 0 10px 0;
+    top: -20px;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1337,7 +1473,7 @@ input[type="number"] {
   margin-bottom: 10px;
 }
 
-.swiper-button-next {
+/* .swiper-button-next {
   right: 0;
 }
 
@@ -1364,7 +1500,7 @@ input[type="number"] {
 
 .swiper-button-prev::after {
   transform: rotate(180deg);
-}
+} */
 
 .project-gallery .thumb .swiper-slide {
   opacity: 0.8;
