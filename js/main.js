@@ -1,21 +1,21 @@
 const mobileBreakpoint = 768;
 
 const langDropdown = document.querySelector('.lang-dropdown');
-document.querySelector('.lang-switcher .current').addEventListener('click', () => {
-  if (langDropdown.classList.contains('show')) {
-    langDropdown.classList.remove('show');
-    fadeOut(langDropdown, 'flex');
-  } else {
-    langDropdown.classList.add('show');
-    fadeIn(langDropdown, 'flex');
-  }
-});
-window.addEventListener('click', (event) => {
-  if (!document.querySelector('.lang-switcher').contains(event.target) && langDropdown.classList.contains('show')) {
-    langDropdown.classList.remove('show');
-    fadeOut(langDropdown, 'flex');
-  }
-});
+// document.querySelector('.lang-switcher .current').addEventListener('click', () => {
+//   if (langDropdown.classList.contains('show')) {
+//     langDropdown.classList.remove('show');
+//     fadeOut(langDropdown, 'flex');
+//   } else {
+//     langDropdown.classList.add('show');
+//     fadeIn(langDropdown, 'flex');
+//   }
+// });
+// window.addEventListener('click', (event) => {
+//   if (!document.querySelector('.lang-switcher').contains(event.target) && langDropdown.classList.contains('show')) {
+//     langDropdown.classList.remove('show');
+//     fadeOut(langDropdown, 'flex');
+//   }
+// });
 
 document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
   const mainMenu = document.querySelector('.main-menu');
@@ -194,24 +194,6 @@ document.querySelectorAll('.tablinks').forEach((el) => {
 //   }
 // });
 
-// new Swiper('.team-slider', {
-//   slidesPerView: 2,
-//   spaceBetween: 10,
-//   pagination: {
-//     el: ".team-slider .swiper-pagination",
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     640: {
-//       slidesPerView: 3,
-//     },
-//     768: {
-//       slidesPerView: 4,
-//       spaceBetween: 30,
-//     }
-//   }
-// });
-
 // new Swiper('.doc-slider', {
 //   slidesPerView: 2,
 //   spaceBetween: 46,
@@ -240,6 +222,24 @@ new Swiper('.banner-slider', {
       return '<div class="' + className + '"><span>' + (index) + '</span><span class="pagination-sq"><span></span></span></div>'
     },
   },
+});
+
+new Swiper('.bestsellers-slider', {
+  slidesPerView: 2,
+  spaceBetween: 10,
+  pagination: {
+    el: ".bestsellers-slider .swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    }
+  }
 });
 
 const galleryThumb = new Swiper('.project-gallery .thumb', {
