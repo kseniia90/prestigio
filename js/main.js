@@ -242,6 +242,20 @@ new Swiper('.bestsellers-slider', {
   }
 });
 
+new Swiper('.news-slider', {
+  slidesPerView: 2,
+  spaceBetween: 10,
+  breakpoints: {
+    640: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    }
+  }
+});
+
 const galleryThumb = new Swiper('.project-gallery .thumb', {
   spaceBetween: 10,
   slidesPerView: 5,
