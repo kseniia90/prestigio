@@ -1,21 +1,22 @@
 const mobileBreakpoint = 768;
 
 const langDropdown = document.querySelector('.lang-dropdown');
-// document.querySelector('.lang-switcher .current').addEventListener('click', () => {
-//   if (langDropdown.classList.contains('show')) {
-//     langDropdown.classList.remove('show');
-//     fadeOut(langDropdown, 'flex');
-//   } else {
-//     langDropdown.classList.add('show');
-//     fadeIn(langDropdown, 'flex');
-//   }
-// });
-// window.addEventListener('click', (event) => {
-//   if (!document.querySelector('.lang-switcher').contains(event.target) && langDropdown.classList.contains('show')) {
-//     langDropdown.classList.remove('show');
-//     fadeOut(langDropdown, 'flex');
-//   }
-// });
+document.querySelector('.lang-switcher .current').addEventListener('click', () => {
+  document.querySelector('.lang-switcher .current').classList.toggle('active');
+  if (langDropdown.classList.contains('show')) {
+    langDropdown.classList.remove('show');
+    fadeOut(langDropdown, 'flex');
+  } else {
+    langDropdown.classList.add('show');
+    fadeIn(langDropdown, 'flex');
+  }
+});
+window.addEventListener('click', (event) => {
+  if (!document.querySelector('.lang-switcher').contains(event.target) && langDropdown.classList.contains('show')) {
+    langDropdown.classList.remove('show');
+    fadeOut(langDropdown, 'flex');
+  }
+});
 
 document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
   const mainMenu = document.querySelector('.main-menu');
@@ -113,7 +114,7 @@ function slideUp(el) {
   }, 300);
 }
 
-function fadeIn(el, display = 'block') {
+function fadeIn(el, display = 'flex') {
   el.style.opacity = 0;
   el.style.display = display;
   el.style.transition = 'opacity 0.3s';
@@ -127,7 +128,7 @@ function fadeIn(el, display = 'block') {
   }, 300);
 }
 
-function fadeOut(el, display = 'block') {
+function fadeOut(el, display = 'flex') {
   el.style.display = display;
   el.style.opacity = 1;
   el.style.transition = 'opacity 0.3s';
@@ -211,50 +212,7 @@ document.querySelectorAll('.tablinks').forEach((el) => {
 //   }
 // });
 
-new Swiper('.banner-slider', {
-  direction: "vertical",
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    renderBullet: function (index, className) {
-      index = index + 1;
-      index = index < 10 ? '0' + index : index; 
-      return '<div class="' + className + '"><span>' + (index) + '</span><span class="pagination-sq"><span></span></span></div>'
-    },
-  },
-});
 
-new Swiper('.bestsellers-slider', {
-  slidesPerView: 2,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 3,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    }
-  }
-});
-
-new Swiper('.news-slider', {
-  slidesPerView: 2,
-  spaceBetween: 10,
-  breakpoints: {
-    640: {
-      slidesPerView: 3,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    }
-  }
-});
 
 const galleryThumb = new Swiper('.project-gallery .thumb', {
   spaceBetween: 10,
@@ -295,3 +253,79 @@ document.querySelectorAll('#popup .close-btn, #overlay').forEach((el) => el.addE
   fadeOut(popup);
   document.body.classList.remove('popup-open');
 }));
+
+
+
+
+
+
+
+
+
+
+
+
+new Swiper('.banner-slider', {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      index = index + 1;
+      index = index < 10 ? '0' + index : index; 
+      return '<div class="' + className + '"><span>' + (index) + '</span><span class="pagination-sq"><span></span></span></div>'
+    },
+  },
+  breakpoints: {
+    0: {
+      direction: "horizontal"
+    },
+    768: {
+      direction: "vertical"
+    }
+  }
+});
+
+new Swiper('.bestsellers-slider', {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 4,
+    }
+  }
+});
+
+new Swiper('.news-slider', {
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 4,
+    }
+  }
+});
+
+
+$(".footer-block .accordion__title").on("click", function (e) {
+  e.preventDefault();
+  var $this = $(this);
+
+  $this.toggleClass("accordion-active");
+  $this.next().slideToggle();
+  $(".accordion__arrow", this).toggleClass("accordion__rotate");
+});
+
+document.querySelector('.blogs .show-more-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  document.querySelectorAll('.blogs .post-catd').forEach((el) => el.style.display= 'flex');
+});
+
+
