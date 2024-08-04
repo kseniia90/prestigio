@@ -286,6 +286,7 @@ new Swiper('.banner-slider', {
 });
 
 new Swiper('.bestsellers-slider', {
+  spaceBetween: 20,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -293,7 +294,6 @@ new Swiper('.bestsellers-slider', {
   breakpoints: {
     768: {
       slidesPerView: 2,
-      spaceBetween: 20,
     },
     992: {
       slidesPerView: 4,
@@ -302,10 +302,10 @@ new Swiper('.bestsellers-slider', {
 });
 
 new Swiper('.news-slider', {
+  spaceBetween: 20,
   breakpoints: {
     768: {
       slidesPerView: 2,
-      spaceBetween: 20,
     },
     992: {
       slidesPerView: 4,
