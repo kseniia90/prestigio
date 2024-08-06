@@ -261,9 +261,8 @@ $(".filter__accordion__title").on("click", function (e) {
   var $this = $(this);
 
   $this.toggleClass("accordion-active");
-  $this.parent().toggleClass("border");
   $this.next().slideToggle();
-  $(".accordion__arrow", this).toggleClass("minus");
+  $(".accordion__arrow", this).toggleClass("active");
 });
 
 // filter check square
