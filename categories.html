@@ -90,34 +90,30 @@
         </div>
     </header>
     <main class="main" >
-        <ol class="breadcrumb container">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Categoria</li>
-        </ol>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Categoria</li>
+            </ol>
+        </div>
         <div class="container">
             <div class="categories__content mb">
                 <div class="categories__content__left">
                     <div class="filter__accordion">
                         <div class="accordion__item">
-                            <div class="accordion__title filter__accordion__title">
+                            <div class="accordion__title filter__accordion__title btn">
                                 <span class="accordion__title-text">Filters</span>
                                 <div class="accordion__arrow"></div>
                             </div>
                             <div class="accordion__content">
-                                <!-- <div class="clear_all_filters">
-                                    <div id="clear_filter" class="clear_all_filters__btn">
-                                        <span>Очистити фільтри</span>
-                                        <img src="./img/clear_filters.svg" alt="x">
-                                    </div>
-                                </div> -->
                                 <div class="categories__price-filter">
                                     <p class="filter-title">Filter by price</p>
                                     <div class="price-range range_container">
                                         <div class="sliders_control">
                                             <input id="fromSlider" type="range" value="100" min="0" max="5000" step="100">
-                                            <output id="fromInput" class="bubble" style="left: calc(2% - 5px);"><span>₴100</span></output>
+                                            <output id="fromInput" class="bubble" ><span>₴100</span></output>
                                             <input id="toSlider" type="range" value="1000" min="0" max="5000" step="100" style="background: linear-gradient(to right, rgb(198, 198, 198) 0%, rgb(198, 198, 198) 2%, rgb(75, 109, 116) 2%, rgb(75, 109, 116) 20%, rgb(198, 198, 198) 20%, rgb(198, 198, 198) 100%); z-index: 0;">
-                                            <output id="toInput" class="bubble" style="left: calc(20% - 10px);"><span>₴1000</span></output>
+                                            <output id="toInput" class="bubble"><span>₴1000</span></output>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +121,7 @@
                                     <div class="filters__accordion">
                                         <div class="accordion__item">
                                             <div class="accordion__title">
-                                                <span class="accordion__title-text">Активні інгрідієнти</span>
+                                                <span class="accordion__title-text">Availability</span>
                                                 <div class="accordion__arrow"></div>
                                             </div>
                                             <div class="accordion__content">
@@ -133,13 +129,13 @@
                                                     <li class="filter__list-item">
                                                         <span class="el_properties" data-properties="">
                                                             <p class="square"></p>
-                                                            <p>ACNEMY</p>
+                                                            <p>Availability (103)</p>
                                                         </span>
                                                     </li>
                                                     <li class="filter__list-item">
                                                         <span class="el_properties" data-properties="">
                                                             <p class="square"></p>
-                                                            <p>ACNEMY</p>
+                                                            <p>Not available (21)</p>
                                                         </span>
                                                     </li>
                                                 </ul>
@@ -147,27 +143,91 @@
                                         </div>
                                         <div class="accordion__item">
                                             <div class="accordion__title accordion-active">
-                                                <span class="accordion__title-text">Країна виробництва</span>
-                                                <div class="accordion__arrow minus"></div>
+                                                <span class="accordion__title-text">Brand</span>
+                                                <div class="accordion__arrow open"></div>
                                             </div>
                                             <div class="accordion__content" style="display: block;">
                                                 <ul class="filter__list">
                                                     <li class="filter__list-item">
                                                         <span class="el_properties" data-properties="">
                                                             <p class="square"></p>
-                                                            <p>ACNEMY</p>
+                                                            <p>Anillo</p>
                                                         </span>
                                                     </li>
                                                     <li class="filter__list-item">
                                                         <span class="el_properties" data-properties="">
                                                             <p class="square"></p>
-                                                            <p>ACNEMY</p>
+                                                            <p>Bilou</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Bjorn Axen</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Curly Shull</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Dovroe</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Derma Factory</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Dikson</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Bjorn Axen</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Curly Shull</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Dovroe</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Derma Factory</p>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter__list-item">
+                                                        <span class="el_properties" data-properties="">
+                                                            <p class="square"></p>
+                                                            <p>Dikson</p>
                                                         </span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="filters__buttons">
+                                    <button class="btn btn-search">Search</button>
+                                    <button class="clear-btn">Clean the filter</button>
                                 </div>
                             </div>
                         </div>

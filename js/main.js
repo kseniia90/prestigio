@@ -256,14 +256,13 @@ document.querySelectorAll('#popup .close-btn, #overlay').forEach((el) => el.addE
 
 //BEGIN filter accordion
 
-$(".filter__accordion__title").on("click", function (e) {
+$(".filter__accordion__title, .accordion__title").on("click", function (e) {
   e.preventDefault();
   var $this = $(this);
 
   $this.toggleClass("accordion-active");
-  $this.parent().toggleClass("border");
   $this.next().slideToggle();
-  $(".accordion__arrow", this).toggleClass("minus");
+  $(".accordion__arrow", this).toggleClass("open");
 });
 
 // filter check square
@@ -462,18 +461,18 @@ new Swiper('.news-slider', {
 });
 
 
-$(".footer-block .accordion__title").on("click", function (e) {
-  e.preventDefault();
-  var $this = $(this);
+// $(".footer-block .accordion__title").on("click", function (e) {
+//   e.preventDefault();
+//   var $this = $(this);
 
-  $this.toggleClass("accordion-active");
-  $this.next().slideToggle();
-  $(".accordion__arrow", this).toggleClass("accordion__rotate");
-});
+//   $this.toggleClass("accordion-active");
+//   $this.next().slideToggle();
+//   $(".accordion__arrow", this).toggleClass("accordion__rotate");
+// });
 
-document.querySelector('.blogs .show-more-btn').addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('.blogs .post-catd').forEach((el) => el.style.display= 'flex');
-});
+// document.querySelector('.blogs .show-more-btn').addEventListener('click', (event) => {
+//   event.preventDefault();
+//   document.querySelectorAll('.blogs .post-catd').forEach((el) => el.style.display= 'flex');
+// });
 
 
