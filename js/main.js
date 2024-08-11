@@ -143,21 +143,21 @@ function fadeOut(el, display = 'flex') {
 }
 
 // tab on home-page START
-document.querySelectorAll('.tablinks').forEach((el) => {
-  el.addEventListener('click', (event) => {
-    event.preventDefault();
-    event.target.closest('.tabs').querySelectorAll('.tab-content').forEach((el) => {
-      el.classList.remove('active');
-    });
-    document.querySelectorAll('.tablinks').forEach((el) => {
-      el.classList.remove('active');
-    });
-    event.target.classList.add('active');
-    const activeTabContent = document.getElementById(event.target.getAttribute('href').substring(1));
-    activeTabContent.classList.add('active');
-    fadeIn(activeTabContent);
-  });
-});
+// document.querySelectorAll('.tablinks').forEach((el) => {
+//   el.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     event.target.closest('.tabs').querySelectorAll('.tab-content').forEach((el) => {
+//       el.classList.remove('active');
+//     });
+//     document.querySelectorAll('.tablinks').forEach((el) => {
+//       el.classList.remove('active');
+//     });
+//     event.target.classList.add('active');
+//     const activeTabContent = document.getElementById(event.target.getAttribute('href').substring(1));
+//     activeTabContent.classList.add('active');
+//     fadeIn(activeTabContent);
+//   });
+// });
 // tab on home-page END
 
 // sliders
@@ -259,11 +259,29 @@ document.querySelectorAll('#popup .close-btn, #overlay').forEach((el) => el.addE
 $(".filter__accordion__title, .accordion__title").on("click", function (e) {
   e.preventDefault();
   var $this = $(this);
-
   $this.toggleClass("accordion-active");
   $this.next().slideToggle();
   $(".accordion__arrow", this).toggleClass("open");
+
 });
+
+if(window.innerWidth < 768){
+  $(".accordion__title.btn").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.toggleClass("accordion-active");
+    $(".accordion__arrow", this).toggleClass("open");
+  });
+
+  // $(".btn-back").on("click", function (e) {
+  //   e.preventDefault();
+  //   var $this = $(this);
+  //   // $this.toggleClass("accordion-active");
+  //   $(".accordion__content", this).removeClass("accordion-active");
+  // });
+}
+
+
 
 // filter check square
 const elProperties = document.querySelectorAll(".el_properties");
@@ -474,5 +492,123 @@ new Swiper('.news-slider', {
 //   event.preventDefault();
 //   document.querySelectorAll('.blogs .post-catd').forEach((el) => el.style.display= 'flex');
 // });
+
+
+
+
+
+
+
+
+// tab on product-page START
+
+function openOption(evt, optionName) {
+
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(optionName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  //
+  $("#" + optionName + " .owl-carousel").trigger("refresh.owl.carousel");
+}
+
+// tab on product-page END
+
+
+//tab 2 on product page start
+
+function openOption2(evt, optionName) {
+
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent2");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks2");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(optionName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+}
+
+//tab 2 on product page end
+
+if (document.querySelector(".single-product") !== null) {
+  new Carousel(
+    document.getElementById("productCarousel"),
+    {
+      transition: 'slide',
+      preload: 3, 
+      Dots: false,
+      Thumbs: {
+        type: 'classic',
+        Carousel: {
+          dragFree: false,
+          slidesPerPage: 'auto',
+          Navigation: true,
+          axis: 'x',
+        },
+      },
+    },
+    { Thumbs }
+  );
+  
+  Fancybox.bind('[data-fancybox="gallery"]', {
+    compact: false,
+    idle: false,
+    dragToClose: false,
+    contentClick: () =>
+      window.matchMedia('(max-width: 578px), (max-height: 578px)').matches
+        ? 'toggleMax'
+        : 'toggleCover',
+  
+    animated: false,
+    showClass: false,
+    hideClass: false,
+  
+    Hash: false,
+    Thumbs: false,
+  
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ['close'],
+      },
+    },
+  
+    Carousel: {
+      transition: 'fadeFast',
+      preload: 3,
+    },
+  
+    Images: {
+      zoom: false,
+      Panzoom: {
+        panMode: 'mousemove',
+        mouseMoveFactor: 1.1,
+      },
+    },
+  });
+}
+
+
+
 
 
