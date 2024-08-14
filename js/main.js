@@ -442,7 +442,7 @@ function openOption2(evt, optionName) {
 
 //tab 2 on product page end
 
-if (document.querySelector(".single-product") !== null) {
+if (document.querySelector("#productCarousel") !== null) {
   new Carousel(
     document.getElementById("productCarousel"),
     {
