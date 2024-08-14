@@ -2174,25 +2174,17 @@ ol.breadcrumb li:last-child {
   margin-bottom: 50px;
 }
 
-@media (max-width: 1150px) {
-	.product-page__content {
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-}
-
-
 .product-page__content__left {
 	padding: 5px;
 	width: 48%;
   border: 1px solid red;
 }
 
-@media (max-width: 1100px) {
+/* @media (max-width: 1100px) {
 	.product-page__content__left {
 		width: 100%;
 	}
-}
+} */
 
 .product-page__content__carousel,
 .product-page__content__img {
@@ -2315,19 +2307,9 @@ ol.breadcrumb li:last-child {
 }
 
 
-
-
-
 .product-page__content__right {
 	flex: 0 0 48%;
 }
-
-/* @media (max-width: 1150px) {
-	.product-page__content__right {
-		flex: 0 0 100%;
-		padding: 0 15px;
-	}
-} */
 
 .product-page__content .item-price {
   flex-direction: column;
@@ -2539,6 +2521,125 @@ ol.breadcrumb li:last-child {
 
 .characteristics-row.row-mb {
   margin-bottom: 55px;
+}
+
+@media (max-width: 1150px) {
+
+	.product-page__content {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+  .product-page__content__left {
+		width: 100%;
+	}
+
+  .product-page__content__carousel,
+  .product-page__content__img {
+    --product-view-height: 335px;
+  }
+
+  #productCarousel .f-carousel__slide img {
+    max-height: 230px;
+  }
+
+  .f-thumbs.is-classic {
+    --f-thumb-width: 40px;
+    --f-thumb-height: 55px;
+  }	
+  
+  @media (max-width: 1150px) {
+    .product-page__content__right {
+      flex: 0 0 100%;
+      padding: 0 15px;
+    }
+  }
+  
+  .product-page__content .item-price {
+    padding-bottom: 20px;
+  }
+  
+  .options-group {
+    margin-top: 15px;
+  }
+  
+  .options-group-label {
+    font-size: 16px;
+  }
+  
+  .options-list {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .options-item {
+    padding: 8px 15px;
+  }
+  
+  .options-group.options .options-item {
+    padding: 8px 15px;
+  }
+  
+  .buy-row {
+    gap: 20px;
+  }
+  
+  .buy-list {
+    gap: 15px;
+  }
+  
+  .buy-list-item {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+  
+  .product-page__content__tab .tab button {
+    padding: 15px 0;
+    font-size: 18px;
+    line-height: 21.26px;
+  }
+  
+  .product-page__content__tab .tabcontent {
+    padding: 30px 0 0;
+  }
+  
+  .tab-row {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+  
+  .tab-row2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .tab-row-text {
+    padding: 0;
+  }
+  
+  .tab-row-title {
+    font-size: 20px;
+    line-height: 23.62px;
+    margin-bottom: 7px;
+    text-align: center;
+  }
+  
+  .characteristics__container {
+    flex-wrap: nowrap;
+    row-gap: 15px;
+    max-height:none;
+  }
+  
+  .characteristics-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: none;
+  }
+  
+  .characteristics-row.row-mb {
+    margin-bottom: 40px;
+  }
 }
 
 
