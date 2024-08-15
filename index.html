@@ -847,15 +847,52 @@
             <button class="close-btn"><img src="./img/close-icon.svg" alt="" width="20" height="20"></button>
             <div class="popup-content help-form">
                 <h3>Your cart</h3>
-                <p>Залишьте свої контакнті дані і ми зв’яжемось з Вами!</p>
-                <form>
-                    <div class="inputs-block">
-                        <input type="text" name="user_name" placeholder="Ім’я">
-                        <input type="tel" name="user_phone" placeholder="Номер телефону">
-                        <input type="email" name="email" placeholder="E-mail">
+                <div class="shopping-cart-products">
+                    <div class="shopping-cart__body">
+                        <div class="shopping-cart__table">
+                            <div class="shopping-cart__table__body">
+
+                                <div class="shopping-cart__table__row">
+                                    <div class="shopping-cart__col shopping-cart__img">
+                                        <div class="product-image">
+                                            <img src="./img/best_1.jpg" alt="img" loading="lazy">
+                                        </div>
+                                    </div>
+                                    <div class="shopping-cart__col">
+                                        <div class="shopping-cart__name">            
+                                            <a href="#">43” indoor digital signage totem prestigio solutions</a>
+                                        </div>
+                                        <div class="shopping-cart__price">
+                                            <span class="old-price">170$</span>
+                                            <span>100$</span>
+                                        </div>
+                                    </div>
+                                    <div class="shopping-cart__col shopping-cart__quantity">
+                                        <div class="shopping_cart__counter">
+                                            <span class="minus_q">-</span>
+                                            <input type="number" disabled="" name="product_quantity" value="1" min="1" max="" inputmode="numeric" style="-moz-appearance: textfield; -webkit-inner-spin-button: initial;">
+                                            <span class="plus_q">+</span>
+                                        </div>
+                                    </div>
+                                    <div class="shopping-cart__col shopping-cart__delete">
+                                        <span class="btn-remove cart_item"><img src="img/trash.svg" alt=""></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn">Зв’язатись</button>
-                </form>
+
+                    <div class="mini-cart__foot">
+                        <div class="mini-cart__foot-row">
+                            <p>Total: 100$</p>
+                        </div>
+                    </div>
+                                               
+                    <div class="mini-cart__row-end">
+                        <a href="#" class="btn">Go to cart</a>
+                        <a href="#" class="btn btn-light">Continue shopping</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
