@@ -1,4 +1,4 @@
-const mobileBreakpoint = 768;
+const mobileBreakpoint = 1174;
 
 const langDropdown = document.querySelector('.lang-dropdown');
 document.querySelector('.lang-switcher .current').addEventListener('click', () => {
