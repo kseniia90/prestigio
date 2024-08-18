@@ -561,12 +561,35 @@ input[type="number"] {
     gap: 20px;
   }
 
+  .main-menu-wrapper>ul>li.menu-item-has-children.active>a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+    position: relative;
+  }
+
+  .main-menu-wrapper>ul>li.menu-item-has-children.active>a:after {
+    bottom: calc(-100% - 4px);
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(61, 83, 151, 0);
+    border-bottom-color: #3D5397;
+    border-width: 11px;
+    margin-left: -11px;
+  }
+  
   .main-menu ul>li .menu-item-has-children {
     position: static;
   }
 
   .main-menu .menu-item-has-children.active>.mega-menu-item {
-    display: flex;
+    display: block;
   }
 
   .main-menu .menu-item-has-children>.mega-menu-item {
@@ -577,37 +600,12 @@ input[type="number"] {
     right: 15px;
     margin-top: -10px;
     background: #fff;
+    min-height: 420px;
     border-top: 4px solid var(--accent);
     box-shadow: 0px 4px 30px 0px #4358CF80;
     border-radius: 10px;
-    display: flex !important;
+    display: none;
   }
-
-  .main-menu .menu-item-has-children>.mega-menu-item:after,
-  .main-menu .menu-item-has-children>.mega-menu-item:before {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-  }
-  
-  .main-menu .menu-item-has-children>.mega-menu-item:after {
-    border-color: rgba(61, 83, 151, 0);
-    border-bottom-color: #3D5397;
-    border-width: 11px;
-    margin-left: -11px;
-  }
-  .main-menu .menu-item-has-children>.mega-menu-item:before {
-    border-color: rgba(61, 83, 151, 0);
-    border-bottom-color: #3D5397;
-    border-width: 14px;
-    margin-left: -14px;
-  }
-
 
   .main-menu .menu-item-has-children .mega-menu-item>.sub-menu {
     width: 390px;
@@ -634,6 +632,7 @@ input[type="number"] {
   }
 
   .main-menu ul>li .menu-item-has-children>.sub-menu {
+    display: none;
     position: absolute;
     left: 390px;
     top: 0;
@@ -642,6 +641,10 @@ input[type="number"] {
     padding: 25px 20px;
     background: #fff;
     border-radius: 0 10px 10px 0;
+  }
+
+  .main-menu ul>li .menu-item-has-children.active>.sub-menu {
+    display: flex;
   }
 
   .main-menu ul>li .menu-item-has-children>a:after {
