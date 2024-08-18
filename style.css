@@ -435,6 +435,7 @@ input[type="number"] {
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
+  position: relative;
 }
 
 .main-header .site-logo {
@@ -456,10 +457,7 @@ input[type="number"] {
 .main-menu-wrapper>ul a {
   color: var(--text-color);
   white-space: nowrap;
-}
-
-.menu-item>a {
-  font-weight: 400 !important;
+  font-weight: 400;
 }
 
 .main-menu ul {
@@ -470,6 +468,10 @@ input[type="number"] {
 
 .main-menu .sub-menu {
   display: none;
+  display: flex;
+  white-space: nowrap;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .icon-menu-wrapper {
@@ -559,39 +561,30 @@ input[type="number"] {
     gap: 20px;
   }
 
-  .main-menu .menu-item-has-children {
-    position: relative;
-  }
-
   .main-menu ul>li .menu-item-has-children {
     position: static;
   }
 
-  .main-menu .menu-item-has-children.active>.sub-menu {
+  .main-menu .menu-item-has-children.active>.mega-menu-item {
     display: flex;
   }
 
-  .main-menu .menu-item-has-children>.sub-menu {
+  .main-menu .menu-item-has-children>.mega-menu-item {
     min-width: 100px;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 10px;
-    background: #F4F7FF;
-    padding: 25px;
+    left: 15px;
+    right: 15px;
+    margin-top: -10px;
+    background: #fff;
     border-top: 4px solid var(--accent);
+    box-shadow: 0px 4px 30px 0px #4358CF80;
     border-radius: 10px;
-    font-weight: 600;
-    font-size: 20px;
-    white-space: nowrap;
-    flex-direction: column;
-    gap: 30px;
-    width: max-content;
+    display: flex !important;
   }
 
-  .main-menu .menu-item-has-children>.sub-menu:after,
-  .main-menu .menu-item-has-children>.sub-menu:before {
+  .main-menu .menu-item-has-children>.mega-menu-item:after,
+  .main-menu .menu-item-has-children>.mega-menu-item:before {
     bottom: 100%;
     left: 50%;
     border: solid transparent;
@@ -602,24 +595,53 @@ input[type="number"] {
     pointer-events: none;
   }
   
-  .main-menu .menu-item-has-children>.sub-menu:after {
+  .main-menu .menu-item-has-children>.mega-menu-item:after {
     border-color: rgba(61, 83, 151, 0);
     border-bottom-color: #3D5397;
     border-width: 11px;
     margin-left: -11px;
   }
-  .main-menu .menu-item-has-children>.sub-menu:before {
+  .main-menu .menu-item-has-children>.mega-menu-item:before {
     border-color: rgba(61, 83, 151, 0);
     border-bottom-color: #3D5397;
     border-width: 14px;
     margin-left: -14px;
   }
 
+
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu {
+    width: 390px;
+    padding: 25px 0;
+    background: #F4F7FF;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu>.menu-item {
+    padding: 10px 25px;
+  }
+
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu>.menu-item>a {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item-has-children.active {
+    background: var(--accent);
+  }
+
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item-has-children.active>a {
+    color: #fff;
+  }
+
   .main-menu ul>li .menu-item-has-children>.sub-menu {
-    left: calc(100% + 10px);
-    top: -10px;
-    transform: none;
+    position: absolute;
+    left: 390px;
+    top: 0;
+    width: calc(100% - 390px);
+    height: 100%;
+    padding: 25px 20px;
     background: #fff;
+    border-radius: 0 10px 10px 0;
   }
 
   .main-menu ul>li .menu-item-has-children>a:after {
@@ -645,12 +667,24 @@ input[type="number"] {
     font-weight: 600;
     line-height: 30px;
     color: var(--accent);
+    margin-bottom: 0;
     grid-area: 1/1/2/3;
+  }
+
+  .sub-menu-conent ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    column-gap: 35px;
+    row-gap: 10px;
   }
 
   .sub-menu-conent ul li {
     padding-left: 20px;
     position: relative;
+  }
+
+  .sub-menu-conent ul li>a {
+    white-space: normal;
   }
 
   .sub-menu-conent ul li::before {
@@ -663,6 +697,19 @@ input[type="number"] {
     position: absolute;
     top: 12px;
     left: 5px;
+  }
+
+  .sub-menu-img {
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sub-menu-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
 }
