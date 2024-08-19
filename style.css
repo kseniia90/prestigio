@@ -860,46 +860,21 @@ input[type="number"] {
 
   .main-menu ul>li .menu-item-has-children>.sub-menu {
     display: none;
-    position: absolute;
-    left: 390px;
-    top: 0;
-    width: calc(100% - 390px);
-    height: 100%;
-    padding: 25px 20px;
-    background: #fff;
-    border-radius: 0 10px 10px 0;
+    width: 100%;
+    padding: 15px 20px;
   }
 
   .main-menu ul>li .menu-item-has-children.active>.sub-menu {
     display: flex;
   }
 
-  .sub-menu-conent {
-    display: grid;
-    gap: 10px;
+  .sub-menu-conent p{
+    display: none;
   }
 
   .sub-menu-img {
     display: none;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
