@@ -67,6 +67,12 @@ document.querySelectorAll('.main-menu .btn-back').forEach((el) => {
   });
 });
 
+document.querySelectorAll('.search-icon').forEach((el) => {
+  el.addEventListener('click', (event) => {
+    document.querySelector('.header__main-form').classList.toggle('show');
+  });
+});
+
 let menuHideTimeout;
 
 document.querySelectorAll('.main-menu-wrapper > ul > .menu-item-has-children').forEach((el) => {
