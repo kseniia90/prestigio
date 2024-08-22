@@ -479,6 +479,11 @@ if (document.querySelector("#productCarousel") !== null) {
       transition: 'slide',
       preload: 3, 
       Dots: false,
+      breakpoints: {
+        "(min-width: 768px)": {
+          Navigation: false,
+        },
+      },
       Thumbs: {
         type: 'classic',
         Carousel: {
@@ -486,6 +491,11 @@ if (document.querySelector("#productCarousel") !== null) {
           slidesPerPage: 'auto',
           Navigation: true,
           axis: 'x',
+          breakpoints: {
+            "(min-width: 768px)": {
+              axis: 'y',
+            },
+          },
         },
       },
     },
