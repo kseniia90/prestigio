@@ -69,7 +69,7 @@ document.querySelectorAll('.main-menu .btn-back').forEach((el) => {
 
 document.querySelectorAll('.search-icon').forEach((el) => {
   el.addEventListener('click', (event) => {
-    document.querySelector('.header__main-form').classList.toggle('show');
+    $('.header__main-form.container').slideToggle();
   });
 });
 
@@ -384,6 +384,7 @@ new Swiper('.bestsellers-slider', {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
+
     768: {
       slidesPerView: 2,
     },
