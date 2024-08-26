@@ -1083,7 +1083,7 @@ input[type="number"] {
   z-index: 1;
   top: 100%;
   right: 0px;
-  margin-top: 9px;
+  margin-top: 8px;
   background: var(--accent);
   padding: 10px;
   border-radius: 0 0 10px 10px;
@@ -1452,6 +1452,10 @@ ol.breadcrumb li.active {
   position: relative;
 }
 
+.bestsellers-slider .product-card {
+  margin-right: 20px;
+}
+
 .product-card:after {
   content: '';
   position: absolute;
@@ -1573,6 +1577,10 @@ ol.breadcrumb li.active {
   background: #FFFFFF;
   padding: 20px;
   position: relative;
+}
+
+.news-slider .news-card {
+  margin-right: 20px;
 }
 
 .news-card .item-img {
@@ -1906,7 +1914,6 @@ ol.breadcrumb li.active {
 
   .product-card {
     max-width: 300px;
-    margin-right: 20px;
   }
 
   .product-card .item-img {
@@ -1919,7 +1926,6 @@ ol.breadcrumb li.active {
 
   .news-card {
     max-width: 253px;
-    margin-right: 20px;
   }
 
   .news-card .item-img {
