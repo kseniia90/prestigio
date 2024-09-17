@@ -391,15 +391,17 @@ new Swiper('.banner-slider', {
 });
 
 new Swiper('.bestsellers-slider', {
-  // spaceBetween: 20,
-  // slidesPerView: 1,
-  slidesPerView: "auto",
+  spaceBetween: 20,
+  slidesPerView: 1,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-
+    0: {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+    },
     768: {
       slidesPerView: 2,
     },
@@ -413,9 +415,13 @@ new Swiper('.bestsellers-slider', {
 });
 
 new Swiper('.news-slider', {
-  // spaceBetween: 20,
-  slidesPerView: "auto",
+  spaceBetween: 20,
+  slidesPerView: 1,
   breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+    },
     768: {
       slidesPerView: 2,
     },
