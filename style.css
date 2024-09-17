@@ -747,11 +747,11 @@ input[type="number"] {
     transition: all .3s ease;
   }
   
-  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item-has-children.active {
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item.active {
     background: var(--accent);
   }
 
-  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item-has-children.active>a {
+  .main-menu .menu-item-has-children .mega-menu-item>.sub-menu .menu-item.menu-item.active>a {
     color: #fff;
   }
 
