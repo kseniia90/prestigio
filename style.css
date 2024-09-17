@@ -724,7 +724,7 @@ input[type="number"] {
     right: 15px;
     margin-top: -10px;
     background: #fff;
-    min-height: 420px;
+    /* min-height: 420px; */
     border-top: 4px solid var(--accent);
     box-shadow: 0px 4px 30px 0px #4358CF80;
     border-radius: 10px;
@@ -733,6 +733,8 @@ input[type="number"] {
 
   .main-menu .menu-item-has-children .mega-menu-item>.sub-menu {
     width: 390px;
+    height: 100%;
+    /* min-height: 370px; */
     padding: 25px 0;
     background: #F4F7FF;
     border-radius: 10px 0 0 10px;
@@ -761,7 +763,8 @@ input[type="number"] {
     left: 390px;
     top: 0;
     width: calc(100% - 390px);
-    height: 100%;
+    /* height: 100%; */
+    min-height: fit-content;
     padding: 25px 20px;
     background: #fff;
     border-radius: 0 10px 10px 0;
@@ -1319,7 +1322,7 @@ ol.breadcrumb li.active {
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3,  1fr);
   grid-gap: 30px;
 }
 
@@ -1880,6 +1883,7 @@ ol.breadcrumb li.active {
   }
 
   .categories {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
   }
 

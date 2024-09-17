@@ -96,6 +96,9 @@ document.querySelectorAll('.main-menu-wrapper > ul > .menu-item-has-children').f
     if (window.innerWidth >= mobileBreakpoint) {
       menuHideTimeout = setTimeout(function() {
         el.classList.remove('active');
+
+        $(el).find('.sub-menu').css('min-height', '');
+
         fadeOut(el.querySelectorAll('.mega-menu-item')[0], 'block');
       }, 400);
     }
@@ -103,28 +106,19 @@ document.querySelectorAll('.main-menu-wrapper > ul > .menu-item-has-children').f
 
 });
 
-// document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .menu-item-has-children > a').forEach((el) => {
-//   el.addEventListener('mouseenter', (event) => {
-//     if (window.innerWidth >= mobileBreakpoint) {
-//       event.preventDefault();
-//       document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .menu-item-has-children').forEach((el) => {
-//         el.classList.remove('active');
-//       });
-
-//       event.target.parentElement.classList.add('active');
-//     }
-//   });
-// });
-
 document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .menu-item > a').forEach((el) => {
   el.addEventListener('mouseenter', (event) => {
     if (window.innerWidth >= mobileBreakpoint) {
       event.preventDefault();
       document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .menu-item').forEach((el) => {
         el.classList.remove('active');
+        $(el).find('.sub-menu').css('min-height', '');
       });
 
       event.target.parentElement.classList.add('active');
+      
+      let submenuHeight = $(event.target).siblings('.sub-menu').outerHeight();
+      $(event.target).closest('.sub-menu').css('min-height', submenuHeight);
     }
   });
 });
@@ -231,8 +225,6 @@ if(window.innerWidth < 768){
     $(".accordion__content.filters").slideToggle();
   });
 }
-
-
 
 // filter check square
 const elProperties = document.querySelectorAll(".el_properties");
@@ -379,6 +371,9 @@ new Swiper('.banner-slider', {
       index = index < 10 ? '0' + index : index; 
       return '<div class="' + className + '"><span>' + (index) + '</span><span class="pagination-sq"><span></span></span></div>'
     },
+  },
+  autoplay: {
+    delay: 5000,
   },
   breakpoints: {
     0: {
