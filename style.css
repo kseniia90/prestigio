@@ -143,7 +143,8 @@ h2 {
   line-height: 41px;
 }
 
-h3 {
+h3,
+.product-page h1 {
   font-size: 25px;
   line-height: 30px;
 }
@@ -167,7 +168,8 @@ h4 {
     margin-bottom: 22px;
   }
 
-  h3 {
+  h3,
+  .product-page h1 {
     font-size: 40px;
     line-height: 47px;
   }
@@ -271,6 +273,7 @@ textarea {
 button,
 select {
   text-transform: none;
+  background: transparent;
 }
 
 select {
@@ -316,7 +319,8 @@ input[type="number"] {
   max-width: 1438px;
 }
 
-.btn {
+.btn,
+.button-filter-submit {
   background-color: var(--accent);
   display: inline-flex;
   justify-content: center;
@@ -341,7 +345,8 @@ input[type="number"] {
 }
 
 @media (min-width: 769px) {
-  .btn:hover {
+  .btn:hover,
+  .button-filter-submit:hover {
     color: var(--accent);
     background-color: transparent;
     text-decoration: none;
@@ -2571,12 +2576,14 @@ ol.breadcrumb li.active {
 }
 
 .filter-title,
-.filter__accordion .accordion__title {
+.filter__accordion .accordion__title,
+.filter__title {
   padding: 26px 0 10px;
-  font-size: 20px;
+  font-size: 20px !important;
   line-height: 23.62px;
   font-weight: 700;
   font-family: 'EurofontExtendedC';
+  color: var(--text-color) !important;
 }
 
 .filter__accordion {
@@ -2640,10 +2647,18 @@ ol.breadcrumb li.active {
 
 .categories__content__left__filters .filters__accordion .accordion__content {
   display: none;
+}
+
+.categories__content__left__filters .filters__accordion .accordion__content,
+.filter__inner--scroll {
   max-height: 305px;
   overflow-y: auto;
   padding-right: 5px;
   padding-bottom: 20px;
+}
+
+.filter__title.accordion__title-text {
+  padding: 0;
 }
 
 .categories__content__left__filters .filter__list-item {
@@ -2653,12 +2668,14 @@ ol.breadcrumb li.active {
   color: #6E717C;
 }
 
-.categories__content__left__filters .filters__accordion .accordion__content::-webkit-scrollbar {
+.categories__content__left__filters .filters__accordion .accordion__content::-webkit-scrollbar,
+.filter__inner--scroll::-webkit-scrollbar {
   width: 4px;
   background: #D8DDEA;
 }
 
-.categories__content__left__filters .filters__accordion .accordion__content::-webkit-scrollbar-thumb {
+.categories__content__left__filters .filters__accordion .accordion__content::-webkit-scrollbar-thumb,
+.filter__inner--scroll::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 90px;
 }
@@ -2750,6 +2767,152 @@ ol.breadcrumb li.active {
   margin-top: 1px;
 }
 
+/* filters WP start  */
+.filter__item {
+  border-bottom: 1px solid #E5E5E5; 
+}
+
+  .pc-range-slider__wrapper {
+      width: 96%;
+      overflow: unset;
+  }
+  .pc-range-slider__control.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content {
+  border: none;
+}
+.pc-range-slider__control .ui-slider-handle {
+  top: -50%;
+  margin-top: 1.5px;
+  z-index: 2;
+  height: 20px !important;
+  width: 20px !important;
+  background-color: white !important;
+  border-radius: 90px;
+  cursor: pointer;
+  border: 4px solid var(--accent) !important;
+}
+
+.pc-range-slider__control .ui-slider-range.ui-corner-all.ui-widget-header {
+  background: var(--accent) !important;
+  border-radius: 10px;
+}
+
+.pc-range-slider__control .ui-slider-range {
+  position: absolute;
+  top: 0% !important;
+  margin-top: 0px;
+  height: 5px !important;
+  background: #999;
+}
+
+.pc-range-slider__control {
+  background: #D8DDEA !important;
+  border: none;
+}
+
+.filter__slider-control-group {
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.filter__slider-control-column {
+  padding: 0;
+}
+.filter__slider-control {
+  border: none;
+  outline: none;
+  text-align: left;
+  -moz-appearance: textfield;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: var(--light);
+  background: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+.filter__slider-control-column:last-child .filter__slider-control {
+  text-align: right;
+}
+
+.filter__checkgroup-link {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.filter__checkgroup-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #C8CEE380;
+}
+
+.filter--style-custom .filter__checkgroup-check {
+  top: 0.3em;
+}
+
+.filter__checkgroup-check:before {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background-color: var(--accent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.filter__checkgroup-title {
+  font-size: 16px !important;
+  line-height: 27px !important;
+  color: #6E717C;
+  padding-left: 0;
+}
+
+.filter__title {
+  /* padding: 26px 0 10px; */
+  padding: 10px 0;
+  font-size: 20px !important;
+  line-height: 23.62px;
+  font-weight: 700;
+  font-family: 'EurofontExtendedC';
+  color: var(--text-color) !important;
+}
+
+.filter__checkgroup-aside {
+  vertical-align: middle;
+}
+
+.filter__icon-minus,
+ .filter__icon-plus {
+  width: 15px;
+  height: 15px;
+}
+
+.filter__icon-minus:before, 
+.filter__icon-plus:before {
+  height: 2px;
+}
+
+.filter__icon-plus:after {
+  width: 2px;
+}
+
+.filter__handle {
+  padding-left: 5px;
+}
+
+
+
+/* filters WP end */
+
 .categories__content__right {
   width: 100%;
   padding-top: 23px;
@@ -2759,9 +2922,8 @@ ol.breadcrumb li.active {
 
 .categories__content__right .categories-result {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  /* flex-wrap: wrap; */
   margin: 0 auto 50px;
   padding: 10px;
 }
@@ -2797,7 +2959,8 @@ ol.breadcrumb li.active {
   color: #F4F7FF;
 }
 
-.filters__buttons {
+.filters__buttons,
+.filter__item.filter__item--type-submit-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2807,6 +2970,7 @@ ol.breadcrumb li.active {
   font-weight: 400;
   line-height: 27px;
   text-align: center;
+  border: none;
 }
 
 .filters__buttons button {
@@ -2898,6 +3062,10 @@ ol.breadcrumb li.active {
     padding-left: 0;
     border-left: none;
     text-align: center;
+  }
+
+  .categories__content__right .categories-result {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   .categories__content__right .product-card {

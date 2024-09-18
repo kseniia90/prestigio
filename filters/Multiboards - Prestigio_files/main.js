@@ -101,11 +101,6 @@ document.querySelectorAll('.main-menu-wrapper > ul > .menu-item-has-children').f
 
         fadeOut(el.querySelectorAll('.mega-menu-item')[0], 'block');
       }, 400);
-      
-      document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .menu-item').forEach((el) => {
-        el.classList.remove('active');
-        $(el).find('.sub-menu').css('min-height', '');
-      });
     }
   });
 
@@ -127,7 +122,6 @@ document.querySelectorAll('.main-menu-wrapper .mega-menu-item > .sub-menu > .men
     }
   });
 });
-
 
 function slideDown(el) {
   el.style.overflow = 'hidden';
