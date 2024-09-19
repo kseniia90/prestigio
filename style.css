@@ -2939,7 +2939,6 @@ input::-webkit-inner-spin-button {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
-  max-width: 75%;
   margin-bottom: 15px;
 }
 
