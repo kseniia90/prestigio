@@ -1530,6 +1530,10 @@ ol.breadcrumb li.active {
   gap: 14px;
 }
 
+.item-content-top>p {
+  margin: 0;
+}
+
 .product-card h5 {
   color: var(--accent);
 }
@@ -2939,7 +2943,7 @@ input::-webkit-inner-spin-button {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .page_navigation.pagination {
