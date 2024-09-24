@@ -3320,7 +3320,8 @@ input::-webkit-inner-spin-button {
   padding: 13px 15px;
 }
 
-.options-item.active {
+.options-item.active,
+.options-item.temp_active {
   color: var(--accent);
   background: #F5F8FF;
   border: 1px solid #3D5397;
@@ -3479,7 +3480,7 @@ input::-webkit-inner-spin-button {
 }
 
 .characteristics-title {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .characteristics-row.row-mb {
