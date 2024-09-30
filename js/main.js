@@ -194,7 +194,7 @@ document.querySelectorAll('.contact-us').forEach((el) => {
   el.addEventListener('click', (event) => {
     event.preventDefault();
     fadeIn(overlay);
-    fadeIn(popup);
+    popup.style.display = 'block';
     document.body.classList.add('popup-open');
 
   });
@@ -203,7 +203,7 @@ document.querySelectorAll('.contact-us').forEach((el) => {
 document.querySelectorAll('#popup .close-btn, #overlay').forEach((el) => el.addEventListener('click', (event) => {
   event.preventDefault();
   fadeOut(overlay);
-  fadeOut(popup);
+  popup.style.display = 'none';
   document.body.classList.remove('popup-open');
 }));
 
