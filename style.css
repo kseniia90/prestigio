@@ -1333,7 +1333,7 @@ ol.breadcrumb li.active {
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, 445px);
   grid-gap: 30px;
 }
 
@@ -1352,7 +1352,7 @@ ol.breadcrumb li.active {
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  height: 65px;
+  height: 135px;
 }
 
 .category-title h4 {
@@ -2447,6 +2447,10 @@ ol.breadcrumb li.active {
   display: inline-flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.shopping-cart-empty-content svg {
+  align-self: center;
 }
 
 .shopping-cart-empty svg path {
