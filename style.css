@@ -1337,7 +1337,7 @@ ol.breadcrumb li.active {
   grid-gap: 30px;
 }
 
-.category {
+.category-item{
   max-width: 445px;
   padding: 28px 30px 35px;
   border-radius: 10px;
@@ -1901,7 +1901,7 @@ ol.breadcrumb li.active {
     grid-gap: 20px;
   }
 
-  .category {
+  .category-item {
     padding: 18px 20px 35px;
     gap: 36px;
     margin: 0 auto;
