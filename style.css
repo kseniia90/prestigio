@@ -1333,11 +1333,12 @@ ol.breadcrumb li.active {
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(3,  1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 30px;
 }
 
 .category {
+  max-width: 445px;
   padding: 28px 30px 35px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0px #4358CF1A;
@@ -1799,7 +1800,6 @@ ol.breadcrumb li.active {
     max-width: 325px;
   }
 
-
   .form-block {
     padding: 46px 10px 55px;
     grid-template-columns: 1fr;
@@ -1898,13 +1898,13 @@ ol.breadcrumb li.active {
   }
 
   .categories {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
   }
 
   .category {
     padding: 18px 20px 35px;
     gap: 36px;
+    margin: 0 auto;
   }
 
   .category-title {
@@ -2962,10 +2962,15 @@ input::-webkit-inner-spin-button {
 
 .categories__content__right .categories-result {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin: 0 auto 50px;
   padding: 10px;
+}
+
+.categories-result .product-card {
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 #product_variation {
@@ -3648,7 +3653,7 @@ input::-webkit-inner-spin-button {
 
 .news-page__content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(332px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
   gap: 20px;
   margin-bottom: 45px;
 }
