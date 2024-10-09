@@ -1601,6 +1601,7 @@ ol.breadcrumb li.active {
 
 .news-slider .news-card {
   margin-right: 20px;
+  max-width: 332px;
 }
 
 .news-card .item-img {
