@@ -4379,6 +4379,12 @@ ul.woocommerce-error {
   width: 100%;
   height: 100%;
 }
+
+.listSocial-sft>li>a.sm img {
+  width: 80%;
+  height: 80%;
+}
+
 .socialBlock {
 	position: fixed;
 	right: 20px;
