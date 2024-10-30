@@ -4532,25 +4532,57 @@ button.openSocial-sft:after{
     gap: 20px;
   }
 
-  /* #description .wp-block-media-text__content {
+  #description .wp-block-media-text__content {
     padding: 0;
-  } */
+  }
+
+  #description .wp-block-group.has-background .wp-block-media-text__content {
+    padding: 0 8%;
+  }
 
   #description .wp-container-core-group-is-layout-2 {
     grid-template-columns: 1fr;
   }
 
-  #description .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media {
-    max-width: 50px;
+  #description .wp-block-group__inner-container.is-layout-grid.wp-container-core-group-is-layout-2.wp-block-group-is-layout-grid .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media {
+    align-self: start;
   }
 
-  #description .wp-block-media-text.is-stacked-on-mobile {
-    grid-template-columns: 80px 1fr !important;
+  #description .wp-block-group__inner-container.is-layout-grid.wp-container-core-group-is-layout-2.wp-block-group-is-layout-grid .wp-block-media-text.is-stacked-on-mobile {
+    grid-template-columns: 75px 1fr !important;
+    gap: 15px;
   }
 
-  #description .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media,
-  #description .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__content {
+  #description .wp-block-group__inner-container.is-layout-grid.wp-container-core-group-is-layout-2.wp-block-group-is-layout-grid .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media,
+  #description .wp-block-group__inner-container.is-layout-grid.wp-container-core-group-is-layout-2.wp-block-group-is-layout-grid .wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__content {
     grid-area: auto;
+  }
+
+  #description .wp-block-group.has-background {
+    padding: 20px 15px;
+  }
+
+  #description .wp-block-group.has-background .wp-block-group__inner-container>.wp-block-heading {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  #description .wp-block-group.has-background .wp-block-group__inner-container> .wp-block-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #description .wp-block-group.has-background .wp-block-group__inner-container> .wp-block-group .wp-block-spacer {
+    display: none;
+  }
+
+  #description .wp-block-group.has-background .wp-block-group__inner-container> .wp-block-group>.wp-block-group {
+    display: block;
+    padding: 0 15px;
+  }
+
+  #description .wp-block-group.has-background .wp-block-group__inner-container> .wp-block-group>.wp-block-group>* {
+    display: inline-block;
   }
 
 }
