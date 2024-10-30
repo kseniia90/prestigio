@@ -1384,6 +1384,12 @@ ol.breadcrumb li.active {
   margin-bottom: 0;
 }
 
+@media (max-width:768px) {
+  .category-title h4 {
+    font-size: 22px;
+  }
+}
+
 .category-title .btn {
   flex: 0 0 auto;
   display: flex;
