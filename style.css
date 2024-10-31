@@ -1016,6 +1016,7 @@ input[type="number"] {
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
+    white-space: normal;
   }
 
   .main-menu .active>.sub-menu {
@@ -3248,6 +3249,10 @@ input::-webkit-inner-spin-button {
 
 .f-thumbs.is-classic .f-carousel__nav .f-button[disabled] {
   display: none;
+}
+
+.f-thumbs__viewport {
+  max-height: 570px;
 }
 
 #productCarousel {
