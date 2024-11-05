@@ -3938,6 +3938,7 @@ input::-webkit-inner-spin-button {
 
 .woocommerce-info {
   margin: 0 0 1em;
+  background-color: transparent !important;
 }
 
 .woocommerce form.checkout_coupon {
@@ -3952,7 +3953,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
   margin-right: 15px;
   height: 100%;
-
 }
 
 .woocommerce form.checkout_coupon .form-row input.input-text,
@@ -4050,6 +4050,7 @@ form.woocommerce-form.woocommerce-form-register.register input {
 .woocommerce form.checkout .zen-ui-select-3,
 .woocommerce-EditAccountForm .woocommerce-form-row,
 form.woocommerce-form.woocommerce-form-register.register .woocommerce-form-row {
+  display: inline-block;
   position: relative;
   margin-bottom: 15px !important;
   width: 100%;
