@@ -4420,6 +4420,45 @@ ul.woocommerce-error {
 .woocommerce-MyAccount-navigation ul {
  list-style: none;
 }
+
+.account-orders-table thead,
+.account-orders-table tbody {
+  border: none !important;
+}
+
+.account-orders-table th,
+.account-orders-table td {
+  padding: 10px 15px;
+}
+
+.account-orders-table thead th {
+  text-align: center !important;
+}
+
+.account-orders-table .woocommerce-button {
+  margin: 5px auto !important;
+}
+
+@media (max-width: 768px) {
+  table.account-orders-table {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .account-orders-table th,
+  .account-orders-table td {
+    padding: 7px 0px;
+  }
+
+  table.account-orders-table.shop_table_responsive tr td::before {
+    margin-right: 30px !important;
+  }
+
+  .account-orders-table .woocommerce-button {
+    margin: 5px auto 20px !important;
+  }
+}
+
 /* My account end */
 
 
