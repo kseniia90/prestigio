@@ -40,11 +40,9 @@ document.querySelectorAll(".mobile-menu-toggle").forEach((el) => {
   });
 });
 
-document
-  .querySelectorAll(".mega-menu-item .menu-item-has-children > a")
-  .forEach((el) => {
+document.querySelectorAll(".mega-menu-item .menu-item-has-children > a").forEach((el) => {
     el.addEventListener("click", (event) => {
-      event.preventDefault();
+      // event.preventDefault();
       if (window.innerWidth < mobileBreakpoint) {
         const subMenu = el.nextElementSibling;
         if (el.parentElement.classList.contains("active")) {
